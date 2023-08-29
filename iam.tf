@@ -235,15 +235,6 @@ data "aws_iam_policy_document" "lb_controller" {
 
     condition {
       test     = "Null"
-      variable = "aws:RequestTag/elbv2.k8s.aws/cluster"
-
-      values = [
-        "true"
-      ]
-    }
-
-    condition {
-      test     = "Null"
       variable = "aws:ResourceTag/elbv2.k8s.aws/cluster"
 
       values = [
